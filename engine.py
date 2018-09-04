@@ -137,7 +137,6 @@ amount = "0.001"
 safediff = "3000.0"
 
 ## main loop
-
 getStatus()
 
 ticker = getTicker(pair)
