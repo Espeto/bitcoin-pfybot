@@ -8,7 +8,7 @@ Profitfy Exchange - Market Maker Bot
 **Attention**: Just a skeleton code, customize for your needs.. use at your risk.
 
 ## Usage
-Edit the `config` area @ `engine.py` and..
+Edit the `config area` and `telegram token/chatid` @ `engine.py` and..
 ```
 ./run.sh
 ```
