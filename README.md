@@ -7,7 +7,7 @@ Profitfy Exchange - Market Maker Bot
 **Attention**: this is just a skeleton code, use at your risk.
 
 ## Usage
-Edit the "config" area @ engine.py and..
+Edit the `config` area @ `engine.py` and..
 ```
 ./run.sh
 ```
