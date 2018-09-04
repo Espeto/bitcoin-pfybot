@@ -173,8 +173,11 @@ for typee in p:
           ff = "lastorder"+typee+".txt"
           with open(ff,"w") as f:
             f.write(str(o["price"]))
+
+          # Telegram.. edit or comment it out  
           token="bot111111681:XxxxX_mxLh_1-XN1Ws8s-XmX" ## your telegram api token
           chatid="-1001111117111" ## your chatid
+
           msg = typee+" - "+str(myprice)
           print msg
           url="https://api.telegram.org/"+token+"/sendmessage?chat_id="+chatid+"&text="+msg
