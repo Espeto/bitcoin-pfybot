@@ -2,7 +2,7 @@
 Profitfy Exchange - Market Maker Bot
 
 - Calculates the AMX authorization token and make valid requests in the Profitfy API;
-- Maintain an order at the desired qty/price always at the top of the orderbook.
+- Keep an order at the desired qty/price always at the top of the orderbook.
 
 **Attention**: this is just a skeleton code, use at your risk.
 
