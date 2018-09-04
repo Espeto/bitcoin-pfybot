@@ -22,7 +22,7 @@ def getStatus():
   print r["balances"][1]
   return r
 
-def amx_authorization_header(id, key, url, method, body): ## based @ https://www.tembtc.com.br/documentacao-tradeapi
+def amx_authorization_header(id, key, url, method, body): ## original: https://www.tembtc.com.br/documentacao-tradeapi
    encoded_url = urllib.quote_plus(url).lower()
    method = method.upper()
    m = hashlib.md5()
@@ -94,6 +94,7 @@ def openOrder(typee, coinFrom, coinTo, amount, price):
 def delOrder(typee, orderid):
   print 'private/orders/'+typee+'/'+orderid
   r = action(id1, key, url1, "DELETE", 'private/orders/'+typee+'/'+orderid)
+  #print r
   return r
 
 def checkSafePrice(checkprice,diffs,typee):
@@ -140,7 +141,7 @@ safediff = "3000.0"
 getStatus()
 
 ticker = getTicker(pair)
-last_price=ticker[0]["last"]
+last_price=ticker[0]["last"] 
 
 orders = getMyActiveOrders(pair)
 my_orders = orders["my"]
@@ -168,9 +169,18 @@ for typee in p:
         if o["orderId"]:
           print "\n** "+typee+" order opened!:"
           print o
+          #print o["price"]
+          ff = "lastorder"+typee+".txt"
           with open(ff,"w") as f:
             f.write(str(o["price"]))
-      except:
+          token="bot111111681:XxxxX_mxLh_1-XN1Ws8s-XmX" ## your telegram api token
+          chatid="-1001111117111" ## your chatid
+          msg = typee+" - "+str(myprice)
+          print msg
+          url="https://api.telegram.org/"+token+"/sendmessage?chat_id="+chatid+"&text="+msg
+          r = requests.get(url)
+      except Exception as e:
+        print (e)
         pass
 
   notontop = checkTopOrder(orders,typee,nickName,my_orders)
